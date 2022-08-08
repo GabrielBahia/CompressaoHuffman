@@ -1,0 +1,13 @@
+# Target labels
+ googletest
+# Source files and their labels
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles/googletest
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles/googletest.rule
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles/googletest-complete.rule
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/src/googletest-stamp/googletest-install.rule
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/src/googletest-stamp/googletest-mkdir.rule
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/src/googletest-stamp/googletest-download.rule
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/src/googletest-stamp/googletest-update.rule
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/src/googletest-stamp/googletest-patch.rule
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/src/googletest-stamp/googletest-configure.rule
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/src/googletest-stamp/googletest-build.rule

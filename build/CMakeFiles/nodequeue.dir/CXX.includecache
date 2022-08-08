@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/NodeQueue.h
+iostream
+-
+NodeTree.h
+../include/NodeTree.h
+
+../include/NodeTree.h
+iostream
+-
+string
+-
+
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/src/NodeQueue.cpp
+iostream
+-
+sstream
+-
+string
+-
+math.h
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/src/math.h
+NodeQueue.h
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/src/NodeQueue.h
+NodeTree.h
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/src/NodeTree.h
+

@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles/googletest"
+		},
+		{
+			"file" : "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles/googletest.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles/googletest-complete.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/src/googletest-stamp/googletest-install.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/src/googletest-stamp/googletest-mkdir.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/src/googletest-stamp/googletest-download.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/src/googletest-stamp/googletest-update.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/src/googletest-stamp/googletest-patch.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/src/googletest-stamp/googletest-configure.rule"
+		},
+		{
+			"file" : "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/src/googletest-stamp/googletest-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest"
+		],
+		"name" : "googletest"
+	}
+}
