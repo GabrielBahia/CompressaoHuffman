@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/huffman_test.dir/tests/huffman_test.cpp.o  -o huffman_test   -L"/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/installed/lib"  -Wl,-rpath,"/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/installed/lib" -lhuffman lib/libgtest.a -lpthread 

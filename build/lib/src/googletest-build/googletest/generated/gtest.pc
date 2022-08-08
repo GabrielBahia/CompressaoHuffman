@@ -1,0 +1,9 @@
+libdir=/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/installed/lib
+includedir=/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/installed/include
+
+Name: gtest
+Description: GoogleTest (without main() function)
+Version: 1.12.1
+URL: https://github.com/google/googletest
+Libs: -L${libdir} -lgtest -lpthread
+Cflags: -I${includedir} -DGTEST_HAS_PTHREAD=1

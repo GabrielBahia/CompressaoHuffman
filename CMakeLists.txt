@@ -59,8 +59,3 @@ find_package(Threads REQUIRED)
 enable_testing()
 
 # Tests
-add_executable(huffman_test tests/huffman_test.cpp)
-
-target_link_libraries(huffman_test huffman gtest Threads::Threads)
-
-add_dependencies(hash_test googletest)

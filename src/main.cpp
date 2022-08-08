@@ -33,13 +33,7 @@ void FreeHuffmanTree(NodeTree *n)
     }
 }
 
-
-float calculaTaxaCompressao(int qtdCharAntigo, int qtdCharNovo)
-{
-    return (qtdCharAntigo - qtdCharNovo)/qtdCharAntigo;
-}
-
-void getByteFrequency(FILE *entrada, unsigned int *listaBytes, int *contChar)
+void getByteFrequency(FILE *entrada, unsigned int *listaBytes)
 {
 
     byte c;
@@ -58,13 +52,33 @@ void getByteFrequency(FILE *entrada, unsigned int *listaBytes, int *contChar)
 
     while (fread(&c, 1, 1, entrada) >= 1)
     {
-        (*contChar)++;
         listaBytes[(byte)c]++;
     }
     rewind(entrada); // "rebobina o arquivo"
 }
 
+/** Função que faz bitmasking no byte lido e retorna um valor booleano confirmando sua existência
+ * Ideia do bitmasking surgiu da leitura de http://ellard.org/dan/www/CS50-95/s10.html
+ * @param: arquivo para ler o byte, posição que se deseja mascarar o byte, byte a ser feita a checagem
+ */
+int geraBit(FILE *entrada, int posicao, byte *aux)
+{
+    // É hora de ler um bit?
+    (posicao % 8 == 0) ? fread(aux, 1, 1, entrada) : NULL == NULL;
 
+    // Exclamação dupla converte para '1' (inteiro) se não for 0. Caso contrário, deixa como está (0)
+    // Joga '1' na casa binária 'posicao' e vê se "bate" com o byte salvo em *aux do momento
+    // Isso é usado para percorrer a árvore (esquerda e direita)
+    return !!((*aux) & (1 << (posicao % 8)));
+}
+
+/** Função para notificar ausência do arquivo. Encerra o programa em seguida.
+ */
+void erroArquivo()
+{
+    printf("Arquivo nao encontrado\n");
+    exit(0);
+}
 
 /** Função que constrói a árvore de huffman
  * @param: a fila de prioridade.
@@ -295,7 +309,6 @@ NodeTree *CompressFile(int *binaryStartWithZero)
 {
 
     FILE *arq;
-    int contChar = 0; // Contador para contar quantos caracteres existem no arquivo de entrada
     // Abre um arquivo TEXTO para LEITURA
     arq = fopen("ArqTeste2.txt", "r");
     if (arq == NULL) // Se houve erro na abertura
@@ -308,9 +321,7 @@ NodeTree *CompressFile(int *binaryStartWithZero)
     int *arr = new int;
     int top = 0;
 
-    getByteFrequency(arq, listaBytes, &contChar);
-    cout << " Contchar : " << contChar << endl;
-    return NULL;
+    getByteFrequency(arq, listaBytes);
 
     PriorityQueue *l = new PriorityQueue(NULL);
     PriorityQueue *l2 = new PriorityQueue(NULL);
@@ -439,7 +450,7 @@ int main()
     int binaryStartWithZero[1000]; //= new int[];//nullptr; //= new bool; 
     cout << "Primeira vez: " << binaryStartWithZero << endl;
     NodeTree *nodeTree = CompressFile(binaryStartWithZero);
-    /*cout << "Segunda vez: " << binaryStartWithZero << endl;
+    cout << "Segunda vez: " << binaryStartWithZero << endl;
     cout << "Letra dessa porra é: " << nodeTree->getDireita()->getEsquerda()->getEsquerda()->getC() << endl;
 
     for(int i = 0; i < 4; i++) {
@@ -447,7 +458,7 @@ int main()
         if(binaryStartWithZero[i]) {
             cout << "Essa porra começa com 0: " << i << endl;
         }
-    }*/
+    }
 
     //cout << nodeTree->getC();
     
