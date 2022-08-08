@@ -1,0 +1,1 @@
+cmd='/usr/bin/cmake;-DCMAKE_INSTALL_PREFIX=/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/installed;-GUnix Makefiles;<SOURCE_DIR><SOURCE_SUBDIR>'

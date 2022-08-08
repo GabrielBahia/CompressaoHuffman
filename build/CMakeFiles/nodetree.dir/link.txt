@@ -1,0 +1,2 @@
+/usr/bin/ar qc libnodetree.a  CMakeFiles/nodetree.dir/src/NodeTree.cpp.o
+/usr/bin/ranlib libnodetree.a
