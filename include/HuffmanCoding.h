@@ -15,7 +15,6 @@ class HuffmanCoding
     public:
 
     void FreeHuffmanTree(NodeTree *n);
-    float calculaTaxaCompressao(int qtdCharAntigo, int qtdCharNovo);
     void getByteFrequency(FILE *entrada, unsigned int *listaBytes, int *contChar);
     NodeTree *BuildHuffmanTree(unsigned *listaBytes, PriorityQueue *l, PriorityQueue *l2, int *tamL);
     int isLeaf(NodeTree* root);
@@ -25,9 +24,12 @@ class HuffmanCoding
     int calculaTamanhoCod(NodeTree *root, unsigned listaBytes[], PriorityQueue *l2);
     void codificacaoBinaria(FILE *entrada, string *codigoBin, int tam, PriorityQueue *l2);
     void codificacaoAscii(string *codigoBin, int tam, string *codigoAscii, int *binaryStartWithZero);
-    NodeTree *CompressFile(int *binaryStartWithZero);
     string Decode(); 
     void binaryIntoWord(string binaryFull, NodeTree *root);
+
+    static void montaTabelaFreq(unsigned listaBytes[]);
+    static float calculaTaxaCompressao(int qtdCharAntigo, int qtdCharNovo);
+    static NodeTree *CompressFile(int *binaryStartWithZero);
 };
 
 #endif
