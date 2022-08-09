@@ -232,7 +232,7 @@ void codificacaoBinaria(FILE *entrada, string *codigoBin, int tam, PriorityQueue
     }
 }
 
-void codificacaoAscii(string *codigoBin, int tam, string *codigoAscii, int *binaryStartWithZero)
+void codificacaoAscii(string *codigoBin, int tam, int *binaryStartWithZero)
 {
 
     fstream file("ArqBin.bin", ios::binary | ios::out);
@@ -251,30 +251,36 @@ void codificacaoAscii(string *codigoBin, int tam, string *codigoAscii, int *bina
     string binaryFull = "";
     int i_bin; 
     int numberOfBinarys = 0;
-    ((tam % 8) != 0) ? numberOfBinarys = (tam / 8) + 1 : numberOfBinarys = tam / 8; 
-    cout << "Quarta vez: " << binaryStartWithZero << endl;
-    binaryStartWithZero = new int[numberOfBinarys];
-    cout << "Quinta vez: " << binaryStartWithZero << endl;
-    //cout << "CodigoBin :" << codigoBin[2] << endl;
+    //((tam % 8) != 0) ? numberOfBinarys = (tam / 8) + 1 : numberOfBinarys = tam / 8; 
+
     while(cont < tam)
     {
+        binaryStartWithZero[numberOfBinarys] = 0;
         for(int i = cont; i < (cont+8) && i < tam; i++)
         {
+            numberOfBinarys++;
             str_bin = str_bin + (*codigoBin).at(i);
+            if(i == cont) {
+                if(str_bin[0] == '0') {
+                    numberOfBinarys--;
+                    binaryStartWithZero[numberOfBinarys] = 1;
+                }
+            }
         }
         cout << str_bin << endl;
         //cout << str_bin[0] << endl;
-        binaryStartWithZero[contNumberOfBinarys] = 0;
+        //binaryStartWithZero[contNumberOfBinarys] = 0;
         //cout << "contaNumberOfBinarys: " << contNumberOfBinarys << endl;
-        if(str_bin[0] == '0') {
+        /*if(str_bin[0] == '0') {
             cout << "ISSO AQUI É 0 NÉ, OU EU TO MUITO DOIDO???" << endl;
             binaryStartWithZero[contNumberOfBinarys] = 1;
             if(binaryStartWithZero[contNumberOfBinarys]) {
                 cout << "Cout nos valores" << binaryStartWithZero[contNumberOfBinarys] << endl;
                 cout << "Entrou porra" << endl;
             }
-        }
+        }*/
         //(str_bin[0] == '0') ? binaryStartWithZero[contNumberOfBinarys] = true : binaryStartWithZero[contNumberOfBinarys] = false; 
+        
         i_bin = stoi(str_bin,nullptr,2);
 
         //
@@ -305,7 +311,7 @@ Decodificação :
 /** Função que comprime um arquivo utilizando a compressão de huffman
  * @param: arquivo a comprimir, arquivo resultado da compressão
  */
-NodeTree *CompressFile(int *binaryStartWithZero)
+NodeTree *CompressFile(int *tam, string *codigoBin2)
 {
 
     FILE *arq;
@@ -343,11 +349,8 @@ NodeTree *CompressFile(int *binaryStartWithZero)
     string codigoAscii = "";
 
     codificacaoBinaria(arq, &codigoBin, tamanhoCodificacaoBin, l2);
-    cout << "Terceira vez: " << binaryStartWithZero << endl;
-    codificacaoAscii(&codigoBin, tamanhoCodificacaoBin, &codigoAscii, binaryStartWithZero);
-    cout << "Sexta vez: " << binaryStartWithZero << endl;
-    cout << "Valor dps de colocar os 1: " << binaryStartWithZero[0] << endl;
-
+    *tam = tamanhoCodificacaoBin;
+    *codigoBin2 = codigoBin;
     return root;
     //FreeHuffmanTree(root);
 }
@@ -399,7 +402,7 @@ string Decode()
 
 }
 
-void binaryIntoWord(string binaryFull, NodeTree *root) {
+void binaryIntoWord(string binaryFull, NodeTree *root, int *binaryStartsWithZero) {
     cout << "Testando se foi: " << binaryFull << endl;
     string wordDecoded = "";
     cout << "Testando essa porra: " << root->getEsquerda()->getC() << endl;
@@ -410,7 +413,8 @@ void binaryIntoWord(string binaryFull, NodeTree *root) {
     for(int i = 0; i < binaryFull.length(); i++)
     {
         flag = false;
-        if(i == 0 || i == 15) {
+        if(binaryStartsWithZero[i]) {
+        //if(i == 0 || i == 15) {
             if(numberOfFlags == 0 && i == 0) {
                 aux = aux->getEsquerda();
                 flag = true;
@@ -445,15 +449,30 @@ void binaryIntoWord(string binaryFull, NodeTree *root) {
     cout << "Palavra utilizada: " << wordDecoded << endl;
 }
 
+
+
 int main()
 {
-    int binaryStartWithZero[1000]; //= new int[];//nullptr; //= new bool; 
-    cout << "Primeira vez: " << binaryStartWithZero << endl;
-    NodeTree *nodeTree = CompressFile(binaryStartWithZero);
-    cout << "Segunda vez: " << binaryStartWithZero << endl;
+    int *binaryStartWithZero, *tamanhoCodificacaoBin = new int(); //= new int[4]; //= new int[];//nullptr; //= new bool; 
+    string codigoBin;
+    //cout << "Primeira vez: " << binaryStartWithZero << endl;
+    NodeTree *nodeTree = CompressFile(tamanhoCodificacaoBin, &codigoBin);
+    //cout << "Tamanho da codificação " << tamanhoCodificacaoBin << endl;
+    //cout << "codigoBin: " << endl;
+    //cout << "tamanho da codificacao: " << *tamanhoCodificacaoBin << endl;
+    binaryStartWithZero = new int[*tamanhoCodificacaoBin];
+    codificacaoAscii(&codigoBin, *tamanhoCodificacaoBin, binaryStartWithZero);
+    
+    /*cout << "Segunda vez: " << binaryStartWithZero << endl;
     cout << "Letra dessa porra é: " << nodeTree->getDireita()->getEsquerda()->getEsquerda()->getC() << endl;
+    */
 
-    for(int i = 0; i < 4; i++) {
+   /*
+   Passar a codeascii pra depois da chamada da compress na main e ai antes de chamar a codeasscii instanciar a binarystar
+   com a variavel tam que a gnt passou como ponteiro para funcao compress
+   */
+
+    for(int i = 0; i < *tamanhoCodificacaoBin; i++) {
         cout << "Entrou aqui????" << endl;
         if(binaryStartWithZero[i]) {
             cout << "Essa porra começa com 0: " << i << endl;
@@ -462,7 +481,7 @@ int main()
 
     //cout << nodeTree->getC();
     
-    //binaryIntoWord(Decode(), nodeTree);
+    binaryIntoWord(Decode(), nodeTree, binaryStartWithZero);
     
     /*
 
