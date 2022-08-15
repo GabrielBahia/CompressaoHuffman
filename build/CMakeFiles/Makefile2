@@ -53,10 +53,12 @@ CMAKE_BINARY_DIR = "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/bu
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/book_read.dir/all
-all: CMakeFiles/priorityqueue.dir/all
-all: CMakeFiles/nodetree.dir/all
 all: CMakeFiles/nodequeue.dir/all
+all: CMakeFiles/nodetree.dir/all
+all: CMakeFiles/priorityqueue.dir/all
+all: CMakeFiles/book_read.dir/all
+all: CMakeFiles/huffmancoding.dir/all
+all: CMakeFiles/huffman_test.dir/all
 all: _deps/googletest-build/all
 
 .PHONY : all
@@ -67,11 +69,13 @@ preinstall: _deps/googletest-build/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/googletest.dir/clean
-clean: CMakeFiles/book_read.dir/clean
-clean: CMakeFiles/priorityqueue.dir/clean
-clean: CMakeFiles/nodetree.dir/clean
 clean: CMakeFiles/nodequeue.dir/clean
+clean: CMakeFiles/nodetree.dir/clean
+clean: CMakeFiles/priorityqueue.dir/clean
+clean: CMakeFiles/book_read.dir/clean
+clean: CMakeFiles/huffmancoding.dir/clean
+clean: CMakeFiles/googletest.dir/clean
+clean: CMakeFiles/huffman_test.dir/clean
 clean: _deps/googletest-build/clean
 
 .PHONY : clean
@@ -137,6 +141,144 @@ _deps/googletest-build/googletest/clean: _deps/googletest-build/googletest/CMake
 .PHONY : _deps/googletest-build/googletest/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/nodequeue.dir
+
+# All Build rule for target.
+CMakeFiles/nodequeue.dir/all:
+	$(MAKE) -f CMakeFiles/nodequeue.dir/build.make CMakeFiles/nodequeue.dir/depend
+	$(MAKE) -f CMakeFiles/nodequeue.dir/build.make CMakeFiles/nodequeue.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" --progress-num=23,24 "Built target nodequeue"
+.PHONY : CMakeFiles/nodequeue.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/nodequeue.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/nodequeue.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 0
+.PHONY : CMakeFiles/nodequeue.dir/rule
+
+# Convenience name for target.
+nodequeue: CMakeFiles/nodequeue.dir/rule
+
+.PHONY : nodequeue
+
+# clean rule for target.
+CMakeFiles/nodequeue.dir/clean:
+	$(MAKE) -f CMakeFiles/nodequeue.dir/build.make CMakeFiles/nodequeue.dir/clean
+.PHONY : CMakeFiles/nodequeue.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/nodetree.dir
+
+# All Build rule for target.
+CMakeFiles/nodetree.dir/all:
+	$(MAKE) -f CMakeFiles/nodetree.dir/build.make CMakeFiles/nodetree.dir/depend
+	$(MAKE) -f CMakeFiles/nodetree.dir/build.make CMakeFiles/nodetree.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" --progress-num=25,26 "Built target nodetree"
+.PHONY : CMakeFiles/nodetree.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/nodetree.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/nodetree.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 0
+.PHONY : CMakeFiles/nodetree.dir/rule
+
+# Convenience name for target.
+nodetree: CMakeFiles/nodetree.dir/rule
+
+.PHONY : nodetree
+
+# clean rule for target.
+CMakeFiles/nodetree.dir/clean:
+	$(MAKE) -f CMakeFiles/nodetree.dir/build.make CMakeFiles/nodetree.dir/clean
+.PHONY : CMakeFiles/nodetree.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/priorityqueue.dir
+
+# All Build rule for target.
+CMakeFiles/priorityqueue.dir/all:
+	$(MAKE) -f CMakeFiles/priorityqueue.dir/build.make CMakeFiles/priorityqueue.dir/depend
+	$(MAKE) -f CMakeFiles/priorityqueue.dir/build.make CMakeFiles/priorityqueue.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" --progress-num=27,28 "Built target priorityqueue"
+.PHONY : CMakeFiles/priorityqueue.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/priorityqueue.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/priorityqueue.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 0
+.PHONY : CMakeFiles/priorityqueue.dir/rule
+
+# Convenience name for target.
+priorityqueue: CMakeFiles/priorityqueue.dir/rule
+
+.PHONY : priorityqueue
+
+# clean rule for target.
+CMakeFiles/priorityqueue.dir/clean:
+	$(MAKE) -f CMakeFiles/priorityqueue.dir/build.make CMakeFiles/priorityqueue.dir/clean
+.PHONY : CMakeFiles/priorityqueue.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/book_read.dir
+
+# All Build rule for target.
+CMakeFiles/book_read.dir/all: CMakeFiles/nodetree.dir/all
+CMakeFiles/book_read.dir/all: CMakeFiles/priorityqueue.dir/all
+CMakeFiles/book_read.dir/all: CMakeFiles/huffmancoding.dir/all
+CMakeFiles/book_read.dir/all: CMakeFiles/nodequeue.dir/all
+	$(MAKE) -f CMakeFiles/book_read.dir/build.make CMakeFiles/book_read.dir/depend
+	$(MAKE) -f CMakeFiles/book_read.dir/build.make CMakeFiles/book_read.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" --progress-num=1,2 "Built target book_read"
+.PHONY : CMakeFiles/book_read.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/book_read.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 10
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/book_read.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 0
+.PHONY : CMakeFiles/book_read.dir/rule
+
+# Convenience name for target.
+book_read: CMakeFiles/book_read.dir/rule
+
+.PHONY : book_read
+
+# clean rule for target.
+CMakeFiles/book_read.dir/clean:
+	$(MAKE) -f CMakeFiles/book_read.dir/build.make CMakeFiles/book_read.dir/clean
+.PHONY : CMakeFiles/book_read.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/huffmancoding.dir
+
+# All Build rule for target.
+CMakeFiles/huffmancoding.dir/all:
+	$(MAKE) -f CMakeFiles/huffmancoding.dir/build.make CMakeFiles/huffmancoding.dir/depend
+	$(MAKE) -f CMakeFiles/huffmancoding.dir/build.make CMakeFiles/huffmancoding.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" --progress-num=21,22 "Built target huffmancoding"
+.PHONY : CMakeFiles/huffmancoding.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/huffmancoding.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/huffmancoding.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 0
+.PHONY : CMakeFiles/huffmancoding.dir/rule
+
+# Convenience name for target.
+huffmancoding: CMakeFiles/huffmancoding.dir/rule
+
+.PHONY : huffmancoding
+
+# clean rule for target.
+CMakeFiles/huffmancoding.dir/clean:
+	$(MAKE) -f CMakeFiles/huffmancoding.dir/build.make CMakeFiles/huffmancoding.dir/clean
+.PHONY : CMakeFiles/huffmancoding.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/googletest.dir
 
 # All Build rule for target.
@@ -164,114 +306,36 @@ CMakeFiles/googletest.dir/clean:
 .PHONY : CMakeFiles/googletest.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/book_read.dir
+# Target rules for target CMakeFiles/huffman_test.dir
 
 # All Build rule for target.
-CMakeFiles/book_read.dir/all: CMakeFiles/priorityqueue.dir/all
-CMakeFiles/book_read.dir/all: CMakeFiles/nodetree.dir/all
-CMakeFiles/book_read.dir/all: CMakeFiles/nodequeue.dir/all
-	$(MAKE) -f CMakeFiles/book_read.dir/build.make CMakeFiles/book_read.dir/depend
-	$(MAKE) -f CMakeFiles/book_read.dir/build.make CMakeFiles/book_read.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" --progress-num=1,2 "Built target book_read"
-.PHONY : CMakeFiles/book_read.dir/all
+CMakeFiles/huffman_test.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
+CMakeFiles/huffman_test.dir/all: CMakeFiles/nodetree.dir/all
+CMakeFiles/huffman_test.dir/all: CMakeFiles/priorityqueue.dir/all
+CMakeFiles/huffman_test.dir/all: CMakeFiles/huffmancoding.dir/all
+CMakeFiles/huffman_test.dir/all: CMakeFiles/googletest.dir/all
+CMakeFiles/huffman_test.dir/all: CMakeFiles/nodequeue.dir/all
+	$(MAKE) -f CMakeFiles/huffman_test.dir/build.make CMakeFiles/huffman_test.dir/depend
+	$(MAKE) -f CMakeFiles/huffman_test.dir/build.make CMakeFiles/huffman_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" --progress-num=19,20 "Built target huffman_test"
+.PHONY : CMakeFiles/huffman_test.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/book_read.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 8
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/book_read.dir/all
+CMakeFiles/huffman_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 20
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/huffman_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 0
-.PHONY : CMakeFiles/book_read.dir/rule
+.PHONY : CMakeFiles/huffman_test.dir/rule
 
 # Convenience name for target.
-book_read: CMakeFiles/book_read.dir/rule
+huffman_test: CMakeFiles/huffman_test.dir/rule
 
-.PHONY : book_read
-
-# clean rule for target.
-CMakeFiles/book_read.dir/clean:
-	$(MAKE) -f CMakeFiles/book_read.dir/build.make CMakeFiles/book_read.dir/clean
-.PHONY : CMakeFiles/book_read.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/priorityqueue.dir
-
-# All Build rule for target.
-CMakeFiles/priorityqueue.dir/all:
-	$(MAKE) -f CMakeFiles/priorityqueue.dir/build.make CMakeFiles/priorityqueue.dir/depend
-	$(MAKE) -f CMakeFiles/priorityqueue.dir/build.make CMakeFiles/priorityqueue.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" --progress-num=23,24 "Built target priorityqueue"
-.PHONY : CMakeFiles/priorityqueue.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/priorityqueue.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/priorityqueue.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 0
-.PHONY : CMakeFiles/priorityqueue.dir/rule
-
-# Convenience name for target.
-priorityqueue: CMakeFiles/priorityqueue.dir/rule
-
-.PHONY : priorityqueue
+.PHONY : huffman_test
 
 # clean rule for target.
-CMakeFiles/priorityqueue.dir/clean:
-	$(MAKE) -f CMakeFiles/priorityqueue.dir/build.make CMakeFiles/priorityqueue.dir/clean
-.PHONY : CMakeFiles/priorityqueue.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/nodetree.dir
-
-# All Build rule for target.
-CMakeFiles/nodetree.dir/all:
-	$(MAKE) -f CMakeFiles/nodetree.dir/build.make CMakeFiles/nodetree.dir/depend
-	$(MAKE) -f CMakeFiles/nodetree.dir/build.make CMakeFiles/nodetree.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" --progress-num=21,22 "Built target nodetree"
-.PHONY : CMakeFiles/nodetree.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/nodetree.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/nodetree.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 0
-.PHONY : CMakeFiles/nodetree.dir/rule
-
-# Convenience name for target.
-nodetree: CMakeFiles/nodetree.dir/rule
-
-.PHONY : nodetree
-
-# clean rule for target.
-CMakeFiles/nodetree.dir/clean:
-	$(MAKE) -f CMakeFiles/nodetree.dir/build.make CMakeFiles/nodetree.dir/clean
-.PHONY : CMakeFiles/nodetree.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/nodequeue.dir
-
-# All Build rule for target.
-CMakeFiles/nodequeue.dir/all:
-	$(MAKE) -f CMakeFiles/nodequeue.dir/build.make CMakeFiles/nodequeue.dir/depend
-	$(MAKE) -f CMakeFiles/nodequeue.dir/build.make CMakeFiles/nodequeue.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" --progress-num=19,20 "Built target nodequeue"
-.PHONY : CMakeFiles/nodequeue.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/nodequeue.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/nodequeue.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" 0
-.PHONY : CMakeFiles/nodequeue.dir/rule
-
-# Convenience name for target.
-nodequeue: CMakeFiles/nodequeue.dir/rule
-
-.PHONY : nodequeue
-
-# clean rule for target.
-CMakeFiles/nodequeue.dir/clean:
-	$(MAKE) -f CMakeFiles/nodequeue.dir/build.make CMakeFiles/nodequeue.dir/clean
-.PHONY : CMakeFiles/nodequeue.dir/clean
+CMakeFiles/huffman_test.dir/clean:
+	$(MAKE) -f CMakeFiles/huffman_test.dir/build.make CMakeFiles/huffman_test.dir/clean
+.PHONY : CMakeFiles/huffman_test.dir/clean
 
 #=============================================================================
 # Target rules for target _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir

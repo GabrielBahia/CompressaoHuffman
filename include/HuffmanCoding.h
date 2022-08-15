@@ -11,25 +11,23 @@ using namespace std;
 class HuffmanCoding
 {
     private:
-        
+
     public:
-
-    void FreeHuffmanTree(NodeTree *n);
-    void getByteFrequency(FILE *entrada, unsigned int *listaBytes, int *contChar);
-    NodeTree *BuildHuffmanTree(unsigned *listaBytes, PriorityQueue *l, PriorityQueue *l2, int *tamL);
-    int isLeaf(NodeTree* root);
-    void PercorreTree(NodeTree *root, char c, NodeTree *encontrado, bool *verifica);
-    void montaTabelaFreq(unsigned listaBytes[]);
-    void montaCodigos(NodeTree *root, PriorityQueue *l2);
-    int calculaTamanhoCod(NodeTree *root, unsigned listaBytes[], PriorityQueue *l2);
-    void codificacaoBinaria(FILE *entrada, string *codigoBin, int tam, PriorityQueue *l2);
-    void codificacaoAscii(string *codigoBin, int tam, string *codigoAscii, int *binaryStartWithZero);
-    string Decode(); 
-    void binaryIntoWord(string binaryFull, NodeTree *root);
-
-    static void montaTabelaFreq(unsigned listaBytes[]);
-    static float calculaTaxaCompressao(int qtdCharAntigo, int qtdCharNovo);
-    static NodeTree *CompressFile(int *binaryStartWithZero);
+        static float taxaDeCompressao(int lengthOfTheOriginalString, int lengthOfTheCompressedMessage);
+        static string codificacaoBinaria(FILE *entrada, PriorityQueue *l2);
+        static string binaryIntoWord(string binaryFull, NodeTree *root);
+        static void escrevendoArqBin(string *codigoBin, int tam, int *numberOfZerosAtTheEnd, bool *notDivisibleByEight);
+        static void montaCodigo(NodeTree *root, unsigned listaBytes[], PriorityQueue *l2);
+        static void montaCodigoAux(NodeTree *root, PriorityQueue *l2);
+        //static void montaTabelaFreq(unsigned listaBytes[]);
+        static void percorreTree(NodeTree *root, char c, NodeTree *encontrado, bool *verifica);
+        static int isLeaf(NodeTree *root);
+        static NodeTree* buildHuffmanTree(unsigned *listaBytes, PriorityQueue *l2);
+        static void freeHuffmanTree(NodeTree *n);
+        static void getByteFrequency(FILE *entrada, unsigned listaBytes[]);
+        static void montaTabelaFreq(unsigned listaBytes[]);
+        static string decompressFile(int numberOfZerosAtTheEnd, bool notDivisibleByEight);
+        static string compressFile(char *entrada);
 };
 
 #endif

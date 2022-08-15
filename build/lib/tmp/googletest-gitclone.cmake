@@ -32,12 +32,12 @@ if(error_code)
 endif()
 
 execute_process(
-  COMMAND "/usr/bin/git"  checkout main --
+  COMMAND "/usr/bin/git"  checkout release-1.12.0 --
   WORKING_DIRECTORY "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/lib/src/googletest"
   RESULT_VARIABLE error_code
   )
 if(error_code)
-  message(FATAL_ERROR "Failed to checkout tag: 'main'")
+  message(FATAL_ERROR "Failed to checkout tag: 'release-1.12.0'")
 endif()
 
 set(init_submodules TRUE)

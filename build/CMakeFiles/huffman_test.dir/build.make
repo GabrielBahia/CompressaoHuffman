@@ -79,6 +79,10 @@ huffman_test_EXTERNAL_OBJECTS =
 
 huffman_test: CMakeFiles/huffman_test.dir/tests/huffman_test.cpp.o
 huffman_test: CMakeFiles/huffman_test.dir/build.make
+huffman_test: libhuffmancoding.a
+huffman_test: libnodequeue.a
+huffman_test: libnodetree.a
+huffman_test: libpriorityqueue.a
 huffman_test: lib/libgtest.a
 huffman_test: CMakeFiles/huffman_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable huffman_test"

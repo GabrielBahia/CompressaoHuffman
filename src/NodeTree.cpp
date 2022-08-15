@@ -116,44 +116,40 @@ int NodeTree::isLeaf(NodeTree* root)
     return !(root->getEsquerda()) && !(root->getDireita());
 }
 
-void NodeTree::printArr(NodeTree *root, int *arr, int n)
+void NodeTree::setCodesAux(NodeTree *root, int *arr, int n)
 {
     int i;
     string aux = "";
     for (i = 0; i < n; ++i)
     {
         aux = aux + to_string(arr[i]);
-        cout<< arr[i];
+        //cout<< arr[i];
     }
   
-    cout<<"\n";
+    //cout<<"\n";
     root->setCodigo(aux);
 }
 
 
-void NodeTree::printCodes(NodeTree* root, int *arr, int top)
+void NodeTree::setCodes(NodeTree* root, int *arr, int top)
 {
     // Assign 0 to left edge and recur
     if (root->getEsquerda()) 
     {
         arr[top] = 0;
-        printCodes(root->getEsquerda(), arr, top + 1);
+        setCodes(root->getEsquerda(), arr, top + 1);
     }
  
     // Assign 1 to right edge and recur
     if (root->getDireita()) 
     {
         arr[top] = 1;
-        printCodes(root->getDireita(), arr, top + 1);
+        setCodes(root->getDireita(), arr, top + 1);
     }
  
-    // If this is a leaf node, then
-    // it contains one of the input
-    // characters, print the character
-    // and its code from arr[]
     if (isLeaf(root)) {
-        cout<< root->getC()<<": ";
-        printArr(root, arr, top);
+        //cout<< root->getC()<<": ";
+        setCodesAux(root, arr, top);
     }
 }
 

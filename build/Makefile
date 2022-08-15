@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = "/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/bu
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -80,6 +68,17 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -91,16 +90,16 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : test/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install
 install: preinstall
@@ -124,16 +123,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,43 +168,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named googletest
+# Target rules for targets named nodequeue
 
 # Build rule for target.
-googletest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 googletest
-.PHONY : googletest
+nodequeue: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nodequeue
+.PHONY : nodequeue
 
 # fast build rule for target.
-googletest/fast:
-	$(MAKE) -f CMakeFiles/googletest.dir/build.make CMakeFiles/googletest.dir/build
-.PHONY : googletest/fast
-
-#=============================================================================
-# Target rules for targets named book_read
-
-# Build rule for target.
-book_read: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 book_read
-.PHONY : book_read
-
-# fast build rule for target.
-book_read/fast:
-	$(MAKE) -f CMakeFiles/book_read.dir/build.make CMakeFiles/book_read.dir/build
-.PHONY : book_read/fast
-
-#=============================================================================
-# Target rules for targets named priorityqueue
-
-# Build rule for target.
-priorityqueue: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 priorityqueue
-.PHONY : priorityqueue
-
-# fast build rule for target.
-priorityqueue/fast:
-	$(MAKE) -f CMakeFiles/priorityqueue.dir/build.make CMakeFiles/priorityqueue.dir/build
-.PHONY : priorityqueue/fast
+nodequeue/fast:
+	$(MAKE) -f CMakeFiles/nodequeue.dir/build.make CMakeFiles/nodequeue.dir/build
+.PHONY : nodequeue/fast
 
 #=============================================================================
 # Target rules for targets named nodetree
@@ -220,17 +194,69 @@ nodetree/fast:
 .PHONY : nodetree/fast
 
 #=============================================================================
-# Target rules for targets named nodequeue
+# Target rules for targets named priorityqueue
 
 # Build rule for target.
-nodequeue: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nodequeue
-.PHONY : nodequeue
+priorityqueue: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 priorityqueue
+.PHONY : priorityqueue
 
 # fast build rule for target.
-nodequeue/fast:
-	$(MAKE) -f CMakeFiles/nodequeue.dir/build.make CMakeFiles/nodequeue.dir/build
-.PHONY : nodequeue/fast
+priorityqueue/fast:
+	$(MAKE) -f CMakeFiles/priorityqueue.dir/build.make CMakeFiles/priorityqueue.dir/build
+.PHONY : priorityqueue/fast
+
+#=============================================================================
+# Target rules for targets named book_read
+
+# Build rule for target.
+book_read: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 book_read
+.PHONY : book_read
+
+# fast build rule for target.
+book_read/fast:
+	$(MAKE) -f CMakeFiles/book_read.dir/build.make CMakeFiles/book_read.dir/build
+.PHONY : book_read/fast
+
+#=============================================================================
+# Target rules for targets named huffmancoding
+
+# Build rule for target.
+huffmancoding: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 huffmancoding
+.PHONY : huffmancoding
+
+# fast build rule for target.
+huffmancoding/fast:
+	$(MAKE) -f CMakeFiles/huffmancoding.dir/build.make CMakeFiles/huffmancoding.dir/build
+.PHONY : huffmancoding/fast
+
+#=============================================================================
+# Target rules for targets named googletest
+
+# Build rule for target.
+googletest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 googletest
+.PHONY : googletest
+
+# fast build rule for target.
+googletest/fast:
+	$(MAKE) -f CMakeFiles/googletest.dir/build.make CMakeFiles/googletest.dir/build
+.PHONY : googletest/fast
+
+#=============================================================================
+# Target rules for targets named huffman_test
+
+# Build rule for target.
+huffman_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 huffman_test
+.PHONY : huffman_test
+
+# fast build rule for target.
+huffman_test/fast:
+	$(MAKE) -f CMakeFiles/huffman_test.dir/build.make CMakeFiles/huffman_test.dir/build
+.PHONY : huffman_test/fast
 
 #=============================================================================
 # Target rules for targets named gmock_main
@@ -283,6 +309,33 @@ gtest: cmake_check_build_system
 gtest/fast:
 	$(MAKE) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
+
+src/HuffmanCoding.o: src/HuffmanCoding.cpp.o
+
+.PHONY : src/HuffmanCoding.o
+
+# target to build an object file
+src/HuffmanCoding.cpp.o:
+	$(MAKE) -f CMakeFiles/huffmancoding.dir/build.make CMakeFiles/huffmancoding.dir/src/HuffmanCoding.cpp.o
+.PHONY : src/HuffmanCoding.cpp.o
+
+src/HuffmanCoding.i: src/HuffmanCoding.cpp.i
+
+.PHONY : src/HuffmanCoding.i
+
+# target to preprocess a source file
+src/HuffmanCoding.cpp.i:
+	$(MAKE) -f CMakeFiles/huffmancoding.dir/build.make CMakeFiles/huffmancoding.dir/src/HuffmanCoding.cpp.i
+.PHONY : src/HuffmanCoding.cpp.i
+
+src/HuffmanCoding.s: src/HuffmanCoding.cpp.s
+
+.PHONY : src/HuffmanCoding.s
+
+# target to generate assembly for a file
+src/HuffmanCoding.cpp.s:
+	$(MAKE) -f CMakeFiles/huffmancoding.dir/build.make CMakeFiles/huffmancoding.dir/src/HuffmanCoding.cpp.s
+.PHONY : src/HuffmanCoding.cpp.s
 
 src/NodeQueue.o: src/NodeQueue.cpp.o
 
@@ -392,28 +445,60 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/book_read.dir/build.make CMakeFiles/book_read.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+tests/huffman_test.o: tests/huffman_test.cpp.o
+
+.PHONY : tests/huffman_test.o
+
+# target to build an object file
+tests/huffman_test.cpp.o:
+	$(MAKE) -f CMakeFiles/huffman_test.dir/build.make CMakeFiles/huffman_test.dir/tests/huffman_test.cpp.o
+.PHONY : tests/huffman_test.cpp.o
+
+tests/huffman_test.i: tests/huffman_test.cpp.i
+
+.PHONY : tests/huffman_test.i
+
+# target to preprocess a source file
+tests/huffman_test.cpp.i:
+	$(MAKE) -f CMakeFiles/huffman_test.dir/build.make CMakeFiles/huffman_test.dir/tests/huffman_test.cpp.i
+.PHONY : tests/huffman_test.cpp.i
+
+tests/huffman_test.s: tests/huffman_test.cpp.s
+
+.PHONY : tests/huffman_test.s
+
+# target to generate assembly for a file
+tests/huffman_test.cpp.s:
+	$(MAKE) -f CMakeFiles/huffman_test.dir/build.make CMakeFiles/huffman_test.dir/tests/huffman_test.cpp.s
+.PHONY : tests/huffman_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/local"
 	@echo "... install/strip"
-	@echo "... googletest"
-	@echo "... book_read"
-	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... priorityqueue"
-	@echo "... nodetree"
+	@echo "... nodequeue"
+	@echo "... edit_cache"
+	@echo "... rebuild_cache"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... rebuild_cache"
-	@echo "... nodequeue"
+	@echo "... nodetree"
+	@echo "... priorityqueue"
+	@echo "... book_read"
+	@echo "... huffmancoding"
+	@echo "... googletest"
+	@echo "... huffman_test"
+	@echo "... install/local"
 	@echo "... gmock_main"
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... src/HuffmanCoding.o"
+	@echo "... src/HuffmanCoding.i"
+	@echo "... src/HuffmanCoding.s"
 	@echo "... src/NodeQueue.o"
 	@echo "... src/NodeQueue.i"
 	@echo "... src/NodeQueue.s"
@@ -426,6 +511,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... tests/huffman_test.o"
+	@echo "... tests/huffman_test.i"
+	@echo "... tests/huffman_test.s"
 .PHONY : help
 
 

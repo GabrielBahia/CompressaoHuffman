@@ -79,11 +79,13 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/googletest.dir/DependInfo.cmake"
-  "CMakeFiles/book_read.dir/DependInfo.cmake"
-  "CMakeFiles/priorityqueue.dir/DependInfo.cmake"
-  "CMakeFiles/nodetree.dir/DependInfo.cmake"
   "CMakeFiles/nodequeue.dir/DependInfo.cmake"
+  "CMakeFiles/nodetree.dir/DependInfo.cmake"
+  "CMakeFiles/priorityqueue.dir/DependInfo.cmake"
+  "CMakeFiles/book_read.dir/DependInfo.cmake"
+  "CMakeFiles/huffmancoding.dir/DependInfo.cmake"
+  "CMakeFiles/googletest.dir/DependInfo.cmake"
+  "CMakeFiles/huffman_test.dir/DependInfo.cmake"
   "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
   "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"

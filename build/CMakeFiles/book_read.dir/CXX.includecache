@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+../include/HuffmanCoding.h
+iostream
+-
+NodeTree.h
+../include/NodeTree.h
+NodeQueue.h
+../include/NodeQueue.h
+PriorityQueue.h
+../include/PriorityQueue.h
+
 ../include/NodeQueue.h
 iostream
 -
@@ -29,19 +39,15 @@ NodeTree.h
 /mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/src/main.cpp
 iostream
 -
+fstream
+-
 sstream
 -
-stdio.h
--
-stdlib.h
--
-time.h
--
 string.h
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/src/string.h
+string
 -
-math.h
--
-fstream
+chrono
 -
 NodeQueue.h
 /mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/src/NodeQueue.h
@@ -49,6 +55,6 @@ PriorityQueue.h
 /mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/src/PriorityQueue.h
 NodeTree.h
 /mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/src/NodeTree.h
-algorithm
--
+HuffmanCoding.h
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/src/HuffmanCoding.h
 

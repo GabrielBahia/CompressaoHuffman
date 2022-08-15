@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/book_read.dir/src/main.cpp.o  -o book_read  libnodequeue.a libnodetree.a libpriorityqueue.a 
+/usr/bin/c++     CMakeFiles/book_read.dir/src/main.cpp.o  -o book_read  libhuffmancoding.a libnodequeue.a libnodetree.a libpriorityqueue.a 

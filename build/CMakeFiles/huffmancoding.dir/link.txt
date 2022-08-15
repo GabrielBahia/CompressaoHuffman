@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhuffmancoding.a  CMakeFiles/huffmancoding.dir/src/HuffmanCoding.cpp.o
+/usr/bin/ranlib libhuffmancoding.a

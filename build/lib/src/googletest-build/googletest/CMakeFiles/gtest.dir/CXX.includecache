@@ -201,8 +201,6 @@ string.h
 -
 cstdint
 -
-functional
--
 iomanip
 -
 limits

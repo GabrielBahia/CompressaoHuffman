@@ -79,6 +79,7 @@ book_read_EXTERNAL_OBJECTS =
 
 book_read: CMakeFiles/book_read.dir/src/main.cpp.o
 book_read: CMakeFiles/book_read.dir/build.make
+book_read: libhuffmancoding.a
 book_read: libnodequeue.a
 book_read: libnodetree.a
 book_read: libpriorityqueue.a

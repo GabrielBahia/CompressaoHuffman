@@ -9,18 +9,24 @@ set(CMAKE_CXX_STANDARD 11)
 # Include directories
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-# Add definition for heap library
-add_library(nodequeue src/NodeQueue.cpp)
-add_library(nodetree src/NodeTree.cpp)
-add_library(priorityqueue src/PriorityQueue.cpp)
+# Add definitiion for huffman_coding library
+add_library(huffmancoding src/HuffmanCoding.cpp)
 
+# Add definitiion for node_queue library
+add_library(nodequeue src/NodeQueue.cpp)
+
+# Add definitiion for node_tree library
+add_library(nodetree src/NodeTree.cpp)
+
+# Add definitiion for priority_queue library
+add_library(priorityqueue src/PriorityQueue.cpp)
 
 # Add definition for the book_read binary
 add_executable(book_read src/main.cpp)
+target_link_libraries(book_read huffmancoding)
 target_link_libraries(book_read nodequeue)
 target_link_libraries(book_read nodetree)
 target_link_libraries(book_read priorityqueue)
-
 
 # Include Google Test
 include(FetchContent)
@@ -39,7 +45,7 @@ include(ExternalProject)
 ExternalProject_Add(googletest
     PREFIX "${CMAKE_BINARY_DIR}/lib"
     GIT_REPOSITORY "https://github.com/google/googletest.git"
-    GIT_TAG "main"
+    GIT_TAG "release-1.12.0"
     CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/lib/installed
 )
 
@@ -59,3 +65,10 @@ find_package(Threads REQUIRED)
 enable_testing()
 
 # Tests
+add_executable(huffman_test tests/huffman_test.cpp)
+
+target_link_libraries(huffman_test huffmancoding nodequeue nodetree priorityqueue gtest Threads::Threads)
+
+add_dependencies(huffman_test googletest)
+
+

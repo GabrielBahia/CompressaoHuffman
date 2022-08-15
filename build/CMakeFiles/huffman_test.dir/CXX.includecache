@@ -41,8 +41,24 @@ gtest/gtest.h
 -
 string
 -
+sstream
+-
+stdio.h
+-
+stdlib.h
+-
+iostream
+-
+fstream
+-
 HuffmanCoding.h
 /mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/tests/HuffmanCoding.h
+NodeQueue.h
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/tests/NodeQueue.h
+NodeTree.h
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/tests/NodeTree.h
+PriorityQueue.h
+/mnt/c/Users/GC789/OneDrive/Área de Trabalho/huffmanNovo/tests/PriorityQueue.h
 
 lib/installed/include/gtest/gtest-assertion-result.h
 memory
@@ -232,8 +248,6 @@ float.h
 string.h
 -
 cstdint
--
-functional
 -
 iomanip
 -

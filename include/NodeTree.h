@@ -152,12 +152,12 @@ class NodeTree
         /**
          * 
          */
-        static void printArr(NodeTree* root, int *arr, int n);
+        static void setCodesAux(NodeTree* root, int *arr, int n);
         
         /**
          * 
          */
-        static void printCodes(NodeTree* root, int *arr, int top);
+        static void setCodes(NodeTree* root, int *arr, int top);
 
 };
 
